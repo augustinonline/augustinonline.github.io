@@ -1,23 +1,41 @@
 # Augustin Immanuel Portfolio
 
-Personal portfolio and resume site for Augustin Immanuel, hosted with GitHub Pages.
+Personal portfolio and resume website for Augustin Immanuel, hosted with GitHub Pages.
 
-Live site:
-- https://augustinonline.github.io
+## Live Website
 
-Pages:
-- Home: https://augustinonline.github.io
+- Portfolio home: https://augustinonline.github.io
 - Detailed profile: https://augustinonline.github.io/profile.html
 
-## Contents
+## Project Preview
 
-- `index.html`: Main portfolio landing page
-- `profile.html`: Detailed career profile page
-- `resume.html`: Styled resume source page
-- `Augustin-Immanuel-Resume.docx`: Word version of the styled resume
-- `Augustin-Immanuel-Resume-Styled.pdf`: PDF version of the styled resume
-- `Augustin-Immanuel-Resume.pdf`: Resume copy kept in the site repository
-- `profile.png`: Current portfolio portrait
+A polished executive-style portfolio for a senior IT and project leadership profile, designed with a premium visual theme and paired with downloadable resume assets.
+
+![Augustin Immanuel portrait](./profile.png)
+
+### What the site includes
+
+- A premium landing page with executive summary, certifications, and contact actions
+- A detailed profile page with career history, skills, certifications, travel, and languages
+- A styled resume available in both Word and PDF formats
+- GitHub Pages deployment from the `main` branch
+
+## Resume Files
+
+- `Augustin-Immanuel-Resume.docx` - styled Word version
+- `Augustin-Immanuel-Resume-Styled.pdf` - styled PDF version
+- `resume.html` - HTML source used to generate the styled resume
+
+## Repository Contents
+
+- `index.html` - main portfolio landing page
+- `profile.html` - detailed career profile page
+- `resume.html` - styled resume source page
+- `Augustin-Immanuel-Resume.docx` - Word version of the styled resume
+- `Augustin-Immanuel-Resume-Styled.pdf` - PDF version of the styled resume
+- `Augustin-Immanuel-Resume.pdf` - existing resume copy kept in the repository
+- `profile.png` - current portfolio portrait
+- `profile.jpg` - earlier portrait version
 
 ## Profile Summary
 
