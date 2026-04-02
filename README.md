@@ -11,7 +11,7 @@ Personal portfolio and resume website for Augustin Immanuel, hosted with GitHub 
 
 A polished executive-style portfolio for a senior IT and project leadership profile, designed with a premium visual theme and paired with downloadable resume assets.
 
-![Augustin Immanuel portrait](./profile.png)
+![Augustin Immanuel portrait](./readme-preview.png)
 
 ### What the site includes
 
