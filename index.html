@@ -187,6 +187,11 @@
       color: var(--ink);
     }
 
+    .button-teal {
+      background: var(--teal);
+      color: #eef7f5;
+    }
+
     .hero-metrics {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -329,9 +334,46 @@
       margin: 0;
     }
 
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature {
+      border-top: 3px solid var(--teal);
+      border-radius: 18px;
+      padding: 20px 18px;
+      background: rgba(23, 75, 82, 0.06);
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .quote-panel {
+      border-radius: 24px;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(23, 75, 82, 0.92), rgba(17, 54, 60, 0.96));
+      color: #f3ede4;
+    }
+
+    .quote-panel p {
+      color: rgba(243, 237, 228, 0.86);
+      margin: 0;
+    }
+
+    .quote-panel .lead {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
     .contact-strip {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 1px;
       background: var(--line);
     }
@@ -395,6 +437,7 @@
 
       .hero-metrics,
       .cards,
+      .feature-list,
       .contact-strip {
         grid-template-columns: 1fr;
       }
@@ -439,6 +482,8 @@
             <div class="cta-row">
               <a class="button button-primary" href="Augustin-Immanuel-Resume.pdf">Download Resume</a>
               <a class="button button-secondary" href="https://www.linkedin.com/in/augustinimmanuelps/">View LinkedIn</a>
+              <a class="button button-teal" href="https://wa.me/919884075735">WhatsApp</a>
+              <a class="button button-secondary" href="tel:+919884075735">Call Me</a>
               <a class="button button-secondary" href="mailto:augustinonline@gmail.com">Email Me</a>
             </div>
 
@@ -472,24 +517,51 @@
     <section class="section" id="about">
       <div class="section-grid">
         <div class="section-label">
-          <h2>About</h2>
+          <h2>Executive Profile</h2>
           <p>
-            This portfolio presents a concise professional profile shaped from your resume,
-            LinkedIn presence, and core positioning as a Senior Project Manager.
+            A senior delivery leader focused on translating business priorities into execution plans people can trust.
           </p>
         </div>
         <div class="section-body">
           <p>
-            My work centers on moving important initiatives from planning to delivery with
-            calm coordination and clear accountability. I enjoy creating order in complex
-            environments, aligning teams around shared goals, and keeping execution grounded
-            in business value.
+            I lead projects and programs with a management style grounded in structure,
+            accountability, and strong stakeholder communication. My focus is on bringing
+            clarity to complex initiatives, creating a dependable operating rhythm, and
+            helping teams deliver against commitments without losing sight of business goals.
           </p>
           <p>
-            I am especially drawn to roles that require cross-functional collaboration,
-            strong communication with stakeholders, and a disciplined approach to timelines,
-            dependencies, and outcomes.
+            The environments I add the most value in are those that need calm leadership,
+            disciplined follow-through, and someone who can connect strategy, people, and
+            day-to-day execution. I am particularly well suited to transformation, delivery,
+            governance, and cross-functional coordination roles.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div class="section-label">
+          <h2>What I Deliver</h2>
+          <p>
+            Practical leadership for organizations that need momentum, alignment, and visible progress.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="feature-list">
+            <div class="feature">
+              <h3>Execution visibility</h3>
+              <p>Turning broad goals into tracked plans, review cadences, and accountable ownership.</p>
+            </div>
+            <div class="feature">
+              <h3>Stakeholder confidence</h3>
+              <p>Providing clear communication, realistic status reporting, and timely escalation when needed.</p>
+            </div>
+            <div class="feature">
+              <h3>Delivery discipline</h3>
+              <p>Keeping timelines, dependencies, and priorities organized so teams can execute with consistency.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -536,6 +608,33 @@
     <section class="section">
       <div class="section-grid">
         <div class="section-label">
+          <h2>Career Snapshot</h2>
+          <p>
+            A concise view of the kind of work and leadership value I bring to delivery-focused roles.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Senior project and program leadership</h3>
+              <p>Leading initiatives that require planning discipline, stakeholder coordination, and dependable execution across teams.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Business and delivery alignment</h3>
+              <p>Bridging strategic priorities with execution detail so leadership teams have visibility and delivery teams have direction.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Transformation-oriented mindset</h3>
+              <p>Supporting change initiatives with governance, communication, and structured follow-through that keeps work moving.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div class="section-label">
           <h2>Leadership Approach</h2>
           <p>
             The way I work is as important as what I deliver.
@@ -560,6 +659,29 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="section-grid">
+        <div class="section-label">
+          <h2>Professional Statement</h2>
+          <p>
+            The leadership style I bring to teams, stakeholders, and delivery environments.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="quote-panel">
+            <p class="lead">
+              I believe strong delivery leadership comes from making priorities visible,
+              decisions practical, and teams confident about the path forward.
+            </p>
+            <p>
+              My goal is to help organizations move from complexity to clarity with a
+              management approach that is calm, dependable, and focused on outcomes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="section-grid">
         <div class="section-label">
@@ -579,6 +701,10 @@
               <a href="tel:+919884075735">+91 9884075735</a>
             </div>
             <div class="contact-item">
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/919884075735">Message on WhatsApp</a>
+            </div>
+            <div class="contact-item">
               <strong>LinkedIn</strong>
               <a href="https://www.linkedin.com/in/augustinimmanuelps/">linkedin.com/in/augustinimmanuelps</a>
             </div>
@@ -596,7 +722,7 @@
     </section>
 
     <footer>
-      Built for GitHub Pages. Updated with portrait, LinkedIn, and resume download.
+      Built for GitHub Pages. Updated with executive profile content, direct contact actions, portrait, LinkedIn, and resume download.
     </footer>
   </div>
 </body>
