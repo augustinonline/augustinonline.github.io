@@ -10,18 +10,17 @@
   >
   <style>
     :root {
-      --bg: #eef3ef;
-      --surface: #f8fbf7;
-      --panel: #12232b;
-      --panel-soft: #1b313b;
-      --ink: #132028;
-      --text-soft: #5a6970;
-      --line: rgba(19, 32, 40, 0.12);
-      --lime: #b9ff66;
-      --lime-deep: #95d643;
-      --sky: #8dd9ff;
-      --white: #ffffff;
-      --shadow: 0 28px 60px rgba(18, 35, 43, 0.12);
+      --bg: #f4efe7;
+      --paper: #fbf8f2;
+      --paper-deep: #f0e7da;
+      --ink: #1f1a17;
+      --muted: #6d6259;
+      --panel: #1e1c1a;
+      --panel-soft: #2a2724;
+      --gold: #c5a46d;
+      --gold-soft: #e0c79b;
+      --line: rgba(31, 26, 23, 0.12);
+      --shadow: 0 30px 70px rgba(38, 28, 18, 0.12);
       --radius-xl: 34px;
       --radius-lg: 24px;
       --radius-md: 18px;
@@ -37,12 +36,12 @@
 
     body {
       margin: 0;
-      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(141, 217, 255, 0.35), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(185, 255, 102, 0.24), transparent 22%),
-        linear-gradient(180deg, #f4faf4 0%, #ebf1ed 48%, #e7eeea 100%);
+        radial-gradient(circle at top left, rgba(197, 164, 109, 0.18), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(176, 152, 112, 0.14), transparent 20%),
+        linear-gradient(180deg, #f7f1e8 0%, #f2ebe2 48%, #eee5d9 100%);
     }
 
     a {
@@ -60,76 +59,81 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      padding: 18px 22px;
+      padding: 18px 24px;
       margin-bottom: 18px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(31, 26, 23, 0.08);
       border-radius: 999px;
-      background: rgba(248, 251, 247, 0.86);
-      backdrop-filter: blur(14px);
+      background: rgba(251, 248, 242, 0.88);
+      backdrop-filter: blur(10px);
       box-shadow: var(--shadow);
     }
 
     .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1rem;
-      letter-spacing: 0.12em;
+      font-size: 0.98rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
     .topnav {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      color: var(--text-soft);
+      gap: 16px;
+      color: var(--muted);
       font-size: 0.95rem;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-columns: 1.16fr 0.84fr;
       gap: 18px;
       min-height: calc(100vh - 120px);
       margin-bottom: 18px;
     }
 
     .hero-main,
-    .hero-side {
+    .hero-side,
+    .panel {
       border-radius: var(--radius-xl);
       overflow: hidden;
       box-shadow: var(--shadow);
     }
 
     .hero-main {
-      background: var(--panel);
-      color: var(--white);
-      padding: 38px;
+      background: linear-gradient(160deg, #211d19, #171412 78%);
+      color: #f6efe4;
+      padding: 42px;
       position: relative;
+      border: 1px solid rgba(197, 164, 109, 0.16);
     }
 
     .hero-main::before {
       content: "";
       position: absolute;
-      inset: 24px 24px auto auto;
+      right: 34px;
+      top: 30px;
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(185, 255, 102, 0.32), transparent 62%);
+      background: radial-gradient(circle, rgba(197, 164, 109, 0.28), transparent 62%);
       filter: blur(8px);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      color: var(--lime);
+      gap: 12px;
+      color: var(--gold-soft);
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 0.76rem;
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow::before {
       content: "";
-      width: 34px;
+      width: 36px;
       height: 1px;
       background: currentColor;
     }
@@ -138,34 +142,47 @@
     h2,
     h3 {
       margin-top: 0;
+      font-weight: 500;
     }
 
     h1 {
-      margin: 24px 0 0;
+      margin: 26px 0 0;
       max-width: 8ch;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.9rem, 6vw, 6rem);
+      font-size: clamp(3rem, 6vw, 6.1rem);
       line-height: 0.92;
       letter-spacing: -0.03em;
+      position: relative;
+      z-index: 1;
     }
 
     .summary {
-      max-width: 40rem;
+      max-width: 39rem;
       margin: 24px 0 0;
-      color: rgba(255, 255, 255, 0.76);
+      color: rgba(246, 239, 228, 0.76);
       font-size: 1.05rem;
-      line-height: 1.85;
+      line-height: 1.9;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      position: relative;
+      z-index: 1;
     }
 
     .button-row,
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .badge-row,
+    .metric-grid,
+    .feature-grid,
+    .card-grid,
+    .contact-grid,
+    .skill-grid {
+      display: grid;
+      gap: 14px;
     }
 
     .button-row {
-      margin-top: 24px;
+      grid-template-columns: repeat(5, max-content);
+      justify-content: start;
+      margin-top: 26px;
+      position: relative;
+      z-index: 1;
     }
 
     .button {
@@ -176,31 +193,34 @@
       padding: 12px 18px;
       border-radius: 999px;
       font-weight: 700;
-      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      transition: transform 0.18s ease, opacity 0.18s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
+      opacity: 0.96;
     }
 
     .button-primary {
-      background: var(--lime);
-      color: #0d1a14;
+      background: var(--gold);
+      color: #1d1712;
     }
 
     .button-secondary {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .button-sky {
-      background: var(--sky);
-      color: #08212d;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: #f6efe4;
     }
 
     .badge-row {
+      grid-template-columns: repeat(5, max-content);
+      justify-content: start;
       margin-top: 22px;
+      position: relative;
+      z-index: 1;
     }
 
     .badge {
@@ -209,24 +229,25 @@
       min-height: 36px;
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(185, 255, 102, 0.18);
-      background: rgba(185, 255, 102, 0.09);
-      color: var(--lime);
-      font-size: 0.88rem;
+      border: 1px solid rgba(197, 164, 109, 0.24);
+      background: rgba(197, 164, 109, 0.08);
+      color: var(--gold-soft);
+      font-size: 0.86rem;
       font-weight: 700;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .metric-grid {
-      display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
       margin-top: 28px;
+      position: relative;
+      z-index: 1;
     }
 
     .metric {
       border-radius: var(--radius-md);
-      padding: 18px;
-      background: rgba(255, 255, 255, 0.07);
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -234,17 +255,19 @@
       display: block;
       margin-bottom: 8px;
       font-size: 1rem;
-      color: var(--white);
+      color: #f9f2e8;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .metric span {
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.65;
-      font-size: 0.94rem;
+      color: rgba(246, 239, 228, 0.72);
+      line-height: 1.7;
+      font-size: 0.93rem;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .hero-side {
-      background: linear-gradient(180deg, #101f27, #203844);
+      background: linear-gradient(180deg, #d6cabc, #bda990);
       position: relative;
       min-height: 640px;
     }
@@ -255,86 +278,78 @@
       object-fit: cover;
       object-position: center top;
       display: block;
-      mix-blend-mode: luminosity;
-      opacity: 0.92;
+      filter: saturate(0.78) contrast(1.02);
     }
 
     .side-card {
       position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 18px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 20px;
       border-radius: 22px;
-      background: rgba(12, 23, 29, 0.72);
-      color: rgba(255, 255, 255, 0.84);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(23, 20, 18, 0.76);
+      color: rgba(246, 239, 228, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .side-card strong {
       display: block;
       margin-bottom: 6px;
-      color: var(--white);
+      color: #f9f2e8;
     }
 
     .band {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1.08fr 1fr;
       gap: 18px;
       margin-bottom: 18px;
     }
 
     .panel {
-      border-radius: var(--radius-xl);
-      background: rgba(248, 251, 247, 0.9);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      background: rgba(251, 248, 242, 0.9);
+      border: 1px solid rgba(31, 26, 23, 0.08);
     }
 
     .panel-dark {
-      background: linear-gradient(160deg, #132730, #1a3640);
-      color: var(--white);
-      border-color: rgba(255, 255, 255, 0.06);
+      background: linear-gradient(160deg, #26211d, #1e1a17);
+      color: #f6efe4;
+      border-color: rgba(197, 164, 109, 0.14);
     }
 
     .panel-inner {
-      padding: 30px;
+      padding: 32px;
     }
 
     .kicker {
-      color: var(--lime-deep);
+      color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.15em;
       font-size: 0.74rem;
       margin-bottom: 12px;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .panel h2 {
-      font-family: Georgia, "Times New Roman", serif;
       font-size: 2rem;
-      line-height: 1;
+      line-height: 1.02;
       margin-bottom: 12px;
     }
 
     .panel p,
-    .panel li {
-      color: var(--text-soft);
-      line-height: 1.82;
+    .panel li,
+    .contact-item a,
+    .contact-item span {
+      color: var(--muted);
+      line-height: 1.85;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .panel-dark p,
     .panel-dark li {
-      color: rgba(255, 255, 255, 0.72);
-    }
-
-    .feature-grid,
-    .card-grid,
-    .skill-grid,
-    .contact-grid {
-      display: grid;
-      gap: 14px;
+      color: rgba(246, 239, 228, 0.74);
     }
 
     .feature-grid {
@@ -353,12 +368,13 @@
     .timeline-item {
       border-radius: 20px;
       border: 1px solid var(--line);
-      background: var(--white);
-      padding: 18px;
+      background: #fffdf8;
+      padding: 20px;
     }
 
-    .panel-dark .feature {
-      background: rgba(255, 255, 255, 0.06);
+    .panel-dark .feature,
+    .panel-dark .skill-box {
+      background: rgba(255, 255, 255, 0.04);
       border-color: rgba(255, 255, 255, 0.08);
     }
 
@@ -367,8 +383,9 @@
     .skill-box h3,
     .timeline-item h3,
     .contact-item strong {
-      font-size: 1.02rem;
       margin-bottom: 8px;
+      font-size: 1.02rem;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     ul {
@@ -382,7 +399,7 @@
     }
 
     .timeline-item {
-      border-left: 4px solid var(--lime);
+      border-left: 3px solid var(--gold);
       box-shadow: none;
     }
 
@@ -393,8 +410,16 @@
     footer {
       padding: 8px 4px 0;
       text-align: center;
-      color: var(--text-soft);
+      color: var(--muted);
       font-size: 0.92rem;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    @media (max-width: 1100px) {
+      .button-row,
+      .badge-row {
+        grid-template-columns: repeat(2, max-content);
+      }
     }
 
     @media (max-width: 1024px) {
@@ -426,9 +451,11 @@
 
       .hero-main,
       .panel-inner {
-        padding: 22px;
+        padding: 24px;
       }
 
+      .button-row,
+      .badge-row,
       .metric-grid,
       .feature-grid,
       .card-grid,
@@ -454,7 +481,7 @@
     <section class="hero" id="top">
       <div class="hero-main">
         <div class="eyebrow">Senior Project Manager</div>
-        <h1>Execution, service delivery, and agile leadership.</h1>
+        <h1>Delivery leadership with executive polish.</h1>
         <p class="summary">
           SAFe Certified Scaled Agile Scrum Master with 23+ years of experience in service
           delivery, project planning, and implementation across diverse IT environments.
@@ -467,7 +494,7 @@
           <a class="button button-primary" href="Augustin-Immanuel-Resume.pdf">Download Resume</a>
           <a class="button button-secondary" href="profile.html">Detailed Profile</a>
           <a class="button button-secondary" href="https://www.linkedin.com/in/augustinimmanuelps/">LinkedIn</a>
-          <a class="button button-sky" href="https://wa.me/919884075735">WhatsApp</a>
+          <a class="button button-secondary" href="https://wa.me/919884075735">WhatsApp</a>
           <a class="button button-secondary" href="tel:+919884075735">Call Me</a>
         </div>
 
@@ -508,7 +535,7 @@
       <div class="panel panel-dark">
         <div class="panel-inner">
           <div class="kicker">Executive Profile</div>
-          <h2>Built for complex delivery environments.</h2>
+          <h2>Trusted in complex delivery environments.</h2>
           <p>
             I am a SAFe Certified Scaled Agile Scrum Master and ITIL v3 professional with
             more than 23 years of experience spanning service delivery, project planning,
@@ -525,7 +552,7 @@
       <div class="panel">
         <div class="panel-inner">
           <div class="kicker">What I Deliver</div>
-          <h2>Leadership with structure and momentum.</h2>
+          <h2>Structure, clarity, and dependable execution.</h2>
           <div class="feature-grid">
             <div class="feature">
               <h3>Agile leadership</h3>
@@ -649,7 +676,7 @@
     </section>
 
     <footer>
-      Refreshed with a new editorial theme for GitHub Pages.
+      Refreshed with a luxury executive theme for GitHub Pages.
     </footer>
   </div>
 </body>

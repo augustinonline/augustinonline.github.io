@@ -10,17 +10,18 @@
   >
   <style>
     :root {
-      --bg: #0f1e25;
-      --surface: #172b33;
-      --surface-soft: #203842;
-      --card: #f6faf7;
-      --ink: #132028;
-      --muted: #607178;
-      --white: #ffffff;
-      --lime: #b9ff66;
-      --sky: #8dd9ff;
-      --line: rgba(19, 32, 40, 0.12);
-      --shadow: 0 28px 60px rgba(3, 10, 14, 0.24);
+      --bg: #171412;
+      --surface: #231f1b;
+      --surface-soft: #2f2924;
+      --paper: #f8f4ed;
+      --paper-soft: #efe6d8;
+      --ink: #241d18;
+      --muted: #6f6257;
+      --white: #f8f1e7;
+      --gold: #c5a46d;
+      --gold-soft: #e2cc9f;
+      --line: rgba(36, 29, 24, 0.12);
+      --shadow: 0 30px 70px rgba(0, 0, 0, 0.24);
       --radius-xl: 32px;
       --radius-lg: 24px;
       --radius-md: 18px;
@@ -32,12 +33,12 @@
 
     body {
       margin: 0;
-      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
       color: var(--white);
       background:
-        radial-gradient(circle at top right, rgba(141, 217, 255, 0.18), transparent 20%),
-        radial-gradient(circle at bottom left, rgba(185, 255, 102, 0.12), transparent 18%),
-        linear-gradient(180deg, #0e1b21 0%, #12252d 44%, #112129 100%);
+        radial-gradient(circle at top right, rgba(197, 164, 109, 0.14), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(197, 164, 109, 0.08), transparent 18%),
+        linear-gradient(180deg, #161311 0%, #1b1714 44%, #1a1512 100%);
     }
 
     a {
@@ -55,32 +56,32 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      padding: 18px 22px;
+      padding: 18px 24px;
       margin-bottom: 18px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
     }
 
     .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1rem;
-      letter-spacing: 0.12em;
+      font-size: 0.98rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
     .toplinks {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      color: rgba(255, 255, 255, 0.72);
+      gap: 16px;
+      color: rgba(248, 241, 231, 0.72);
       font-size: 0.95rem;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 18px;
       margin-bottom: 18px;
     }
@@ -94,9 +95,10 @@
     }
 
     .hero-copy {
-      background: linear-gradient(160deg, #17303a, #12232b);
-      padding: 34px;
+      background: linear-gradient(160deg, #231d19, #181412);
+      padding: 38px;
       position: relative;
+      border: 1px solid rgba(197, 164, 109, 0.14);
     }
 
     .hero-copy::before {
@@ -106,46 +108,70 @@
       width: 190px;
       height: 190px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(185, 255, 102, 0.26), transparent 60%);
+      background: radial-gradient(circle, rgba(197, 164, 109, 0.24), transparent 60%);
       filter: blur(8px);
     }
 
     .eyebrow {
-      color: var(--lime);
+      color: var(--gold-soft);
       letter-spacing: 0.16em;
       text-transform: uppercase;
       font-size: 0.76rem;
       margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
     h1,
     h2,
     h3 {
       margin-top: 0;
+      font-weight: 500;
     }
 
     h1 {
       max-width: 9ch;
       margin-bottom: 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.8rem, 5vw, 5.4rem);
+      font-size: clamp(2.9rem, 5vw, 5.4rem);
       line-height: 0.94;
       letter-spacing: -0.03em;
+      position: relative;
+      z-index: 1;
     }
 
     .summary {
       max-width: 39rem;
-      color: rgba(255, 255, 255, 0.76);
-      line-height: 1.85;
+      color: rgba(248, 241, 231, 0.76);
+      line-height: 1.9;
       font-size: 1.04rem;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      position: relative;
+      z-index: 1;
     }
 
     .button-row,
+    .badge-row,
+    .grid,
+    .triple,
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .button-row {
+      grid-template-columns: repeat(4, max-content);
+      justify-content: start;
+      margin-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
     .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      grid-template-columns: repeat(5, max-content);
+      justify-content: start;
       margin-top: 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .button,
@@ -157,34 +183,30 @@
       padding: 10px 16px;
       border-radius: 999px;
       font-weight: 700;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     .button.primary {
-      background: var(--lime);
-      color: #0e1814;
+      background: var(--gold);
+      color: #1d1712;
     }
 
     .button.secondary {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
       color: var(--white);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .button.sky {
-      background: var(--sky);
-      color: #08212d;
-    }
-
     .badge {
       min-height: 36px;
-      background: rgba(185, 255, 102, 0.08);
-      border: 1px solid rgba(185, 255, 102, 0.14);
-      color: var(--lime);
+      background: rgba(197, 164, 109, 0.08);
+      border: 1px solid rgba(197, 164, 109, 0.16);
+      color: var(--gold-soft);
       font-size: 0.88rem;
     }
 
     .hero-photo {
-      background: linear-gradient(180deg, #12212a, #203744);
+      background: linear-gradient(180deg, #bba88f, #9d886f);
       padding: 20px;
     }
 
@@ -194,60 +216,57 @@
       max-height: 620px;
       object-fit: cover;
       border-radius: 24px;
-      filter: saturate(0.86) contrast(1.04);
-    }
-
-    .grid,
-    .triple {
-      display: grid;
-      gap: 18px;
-      margin-bottom: 18px;
+      filter: saturate(0.78) contrast(1.02);
     }
 
     .grid {
       grid-template-columns: 1fr 1fr;
+      margin-bottom: 18px;
     }
 
     .triple {
       grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 18px;
     }
 
     .panel {
-      background: var(--card);
+      background: rgba(248, 244, 237, 0.94);
       color: var(--ink);
-      border: 1px solid var(--line);
-      padding: 28px;
+      border: 1px solid rgba(36, 29, 24, 0.08);
+      padding: 30px;
     }
 
     .panel-dark {
-      background: linear-gradient(160deg, #15303b, #1f3d48);
+      background: linear-gradient(160deg, #26211d, #1d1815);
       color: var(--white);
-      border-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(197, 164, 109, 0.14);
     }
 
     .panel-dark p,
     .panel-dark li {
-      color: rgba(255, 255, 255, 0.74);
+      color: rgba(248, 241, 231, 0.74);
     }
 
     .kicker {
-      color: #6dc3ff;
+      color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.15em;
       font-size: 0.74rem;
       margin-bottom: 12px;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     h2 {
-      font-family: Georgia, "Times New Roman", serif;
       font-size: 2rem;
-      line-height: 1;
+      line-height: 1.02;
       margin-bottom: 12px;
     }
 
-    p, li {
+    p,
+    li {
       color: var(--muted);
-      line-height: 1.84;
+      line-height: 1.86;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     }
 
     ul {
@@ -256,32 +275,38 @@
     }
 
     .timeline {
-      display: grid;
       gap: 14px;
     }
 
     .timeline-item {
       border-radius: 20px;
-      padding: 18px;
-      border-left: 4px solid var(--lime);
-      background: rgba(19, 32, 40, 0.04);
+      padding: 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(36, 29, 24, 0.04);
     }
 
     .panel-dark .timeline-item {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: var(--sky);
+      background: rgba(255, 255, 255, 0.04);
     }
 
     .timeline-item h3 {
       margin-bottom: 8px;
-      font-size: 1.02rem;
+      font-size: 1.04rem;
     }
 
     footer {
       text-align: center;
-      color: rgba(255, 255, 255, 0.62);
+      color: rgba(248, 241, 231, 0.62);
       font-size: 0.92rem;
       padding-top: 4px;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    @media (max-width: 1100px) {
+      .button-row,
+      .badge-row {
+        grid-template-columns: repeat(2, max-content);
+      }
     }
 
     @media (max-width: 980px) {
@@ -306,7 +331,12 @@
       .hero-copy,
       .panel,
       .hero-photo {
-        padding: 22px;
+        padding: 24px;
+      }
+
+      .button-row,
+      .badge-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -326,7 +356,7 @@
     <section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">Detailed Career Profile</div>
-        <h1>Agile delivery leadership with 23+ years of technical and service experience.</h1>
+        <h1>Senior delivery leadership with technical depth and service discipline.</h1>
         <p class="summary">
           SAFe Certified Scaled Agile Scrum Master with 23+ years of experience in service
           delivery, project planning, and implementation across diverse IT environments.
@@ -339,7 +369,7 @@
         <div class="button-row">
           <a class="button primary" href="Augustin-Immanuel-Resume.pdf">Download Resume</a>
           <a class="button secondary" href="index.html">Back to Home</a>
-          <a class="button sky" href="https://wa.me/919884075735">WhatsApp</a>
+          <a class="button secondary" href="https://wa.me/919884075735">WhatsApp</a>
           <a class="button secondary" href="mailto:augustinonline@gmail.com">Email</a>
         </div>
 
@@ -470,7 +500,7 @@
     </section>
 
     <footer>
-      Refreshed with a darker editorial profile theme for GitHub Pages.
+      Refreshed with a luxury executive profile theme for GitHub Pages.
     </footer>
   </div>
 </body>
