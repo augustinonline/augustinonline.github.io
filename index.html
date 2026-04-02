@@ -10,17 +10,21 @@
   >
   <style>
     :root {
-      --sand: #f4ecdf;
-      --cream: #fffaf2;
-      --ink: #1b2a2f;
-      --muted: #526469;
-      --rust: #b65a36;
-      --rust-dark: #8f4327;
-      --teal: #174b52;
-      --teal-soft: #dce8e6;
-      --line: rgba(27, 42, 47, 0.12);
-      --shadow: 0 24px 50px rgba(20, 31, 34, 0.12);
-      --radius: 28px;
+      --bg: #eef3ef;
+      --surface: #f8fbf7;
+      --panel: #12232b;
+      --panel-soft: #1b313b;
+      --ink: #132028;
+      --text-soft: #5a6970;
+      --line: rgba(19, 32, 40, 0.12);
+      --lime: #b9ff66;
+      --lime-deep: #95d643;
+      --sky: #8dd9ff;
+      --white: #ffffff;
+      --shadow: 0 28px 60px rgba(18, 35, 43, 0.12);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
     }
 
     * {
@@ -36,91 +40,91 @@
       font-family: "Trebuchet MS", "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(182, 90, 54, 0.18), transparent 22%),
-        radial-gradient(circle at top right, rgba(23, 75, 82, 0.16), transparent 26%),
-        linear-gradient(180deg, #f8f0e5 0%, #f3ebdf 32%, #efe4d5 100%);
+        radial-gradient(circle at top left, rgba(141, 217, 255, 0.35), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(185, 255, 102, 0.24), transparent 22%),
+        linear-gradient(180deg, #f4faf4 0%, #ebf1ed 48%, #e7eeea 100%);
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
     .page {
-      width: min(1180px, calc(100% - 32px));
-      margin: 24px auto 48px;
+      width: min(1220px, calc(100% - 28px));
+      margin: 18px auto 44px;
     }
 
-    .hero {
-      min-height: calc(100vh - 48px);
-      display: grid;
-      grid-template-columns: 1.2fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-copy,
-    .hero-photo {
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .hero-copy {
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 248, 240, 0.96)),
-        var(--cream);
-      padding: 42px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    .hero-copy::before {
-      content: "";
-      position: absolute;
-      inset: auto auto 28px 28px;
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: rgba(182, 90, 54, 0.08);
-      filter: blur(4px);
-    }
-
-    .nav {
+    .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      position: relative;
-      z-index: 1;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(248, 251, 247, 0.86);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
     }
 
     .brand {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.08em;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .nav-links {
+    .topnav {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      color: var(--text-soft);
       font-size: 0.95rem;
-      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 18px;
+      min-height: calc(100vh - 120px);
+      margin-bottom: 18px;
+    }
+
+    .hero-main,
+    .hero-side {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      background: var(--panel);
+      color: var(--white);
+      padding: 38px;
+      position: relative;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 24px 24px auto auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(185, 255, 102, 0.32), transparent 62%);
+      filter: blur(8px);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
+      color: var(--lime);
       text-transform: uppercase;
-      color: var(--rust-dark);
-      margin-bottom: 18px;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
     }
 
     .eyebrow::before {
@@ -130,33 +134,38 @@
       background: currentColor;
     }
 
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+    }
+
     h1 {
-      margin: 0;
+      margin: 24px 0 0;
+      max-width: 8ch;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.7rem, 6vw, 5.6rem);
-      line-height: 0.94;
-      max-width: 9ch;
-      position: relative;
-      z-index: 1;
+      font-size: clamp(2.9rem, 6vw, 6rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
     }
 
     .summary {
-      margin: 22px 0 0;
-      max-width: 38rem;
-      color: var(--muted);
-      font-size: 1.08rem;
+      max-width: 40rem;
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.05rem;
       line-height: 1.85;
-      position: relative;
-      z-index: 1;
     }
 
-    .cta-row {
+    .button-row,
+    .badge-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-      position: relative;
-      z-index: 1;
+      gap: 12px;
+    }
+
+    .button-row {
+      margin-top: 24px;
     }
 
     .button {
@@ -164,521 +173,407 @@
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      padding: 12px 20px;
+      padding: 12px 18px;
       border-radius: 999px;
-      text-decoration: none;
       font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 24px rgba(27, 42, 47, 0.12);
     }
 
     .button-primary {
-      background: var(--rust);
-      color: #fff9f2;
+      background: var(--lime);
+      color: #0d1a14;
     }
 
     .button-secondary {
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid var(--line);
-      color: var(--ink);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .button-teal {
-      background: var(--teal);
-      color: #eef7f5;
-    }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 36px;
-      position: relative;
-      z-index: 1;
+    .button-sky {
+      background: var(--sky);
+      color: #08212d;
     }
 
     .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       margin-top: 22px;
-      position: relative;
-      z-index: 1;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      min-height: 38px;
+      min-height: 36px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(23, 75, 82, 0.08);
-      border: 1px solid rgba(23, 75, 82, 0.14);
-      color: var(--teal);
-      font-size: 0.9rem;
+      border: 1px solid rgba(185, 255, 102, 0.18);
+      background: rgba(185, 255, 102, 0.09);
+      color: var(--lime);
+      font-size: 0.88rem;
       font-weight: 700;
-      letter-spacing: 0.01em;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
     }
 
     .metric {
-      background: rgba(255, 255, 255, 0.62);
-      border: 1px solid var(--line);
-      border-radius: 20px;
+      border-radius: var(--radius-md);
       padding: 18px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .metric strong {
       display: block;
+      margin-bottom: 8px;
       font-size: 1rem;
-      margin-bottom: 6px;
+      color: var(--white);
     }
 
     .metric span {
-      color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.65;
+      font-size: 0.94rem;
     }
 
-    .hero-photo {
-      background: linear-gradient(180deg, #c9d4df, #b6bfd3);
+    .hero-side {
+      background: linear-gradient(180deg, #101f27, #203844);
       position: relative;
-      min-height: 620px;
+      min-height: 640px;
     }
 
-    .hero-photo img {
+    .hero-side img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
+      mix-blend-mode: luminosity;
+      opacity: 0.92;
     }
 
-    .photo-badge {
+    .side-card {
       position: absolute;
-      left: 22px;
-      bottom: 22px;
-      background: rgba(19, 34, 38, 0.76);
-      color: #f6efe4;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 18px;
-      padding: 14px 16px;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(12, 23, 29, 0.72);
+      color: rgba(255, 255, 255, 0.84);
       backdrop-filter: blur(10px);
-      max-width: 260px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .photo-badge strong {
+    .side-card strong {
       display: block;
-      font-size: 1rem;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
+      color: var(--white);
     }
 
-    .photo-badge span {
-      color: rgba(246, 239, 228, 0.84);
-      font-size: 0.92rem;
-      line-height: 1.55;
+    .band {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
     }
 
-    .section {
-      margin-top: 28px;
-      background: rgba(255, 250, 242, 0.9);
+    .panel {
+      border-radius: var(--radius-xl);
+      background: rgba(248, 251, 247, 0.9);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
     }
 
-    .section-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+    .panel-dark {
+      background: linear-gradient(160deg, #132730, #1a3640);
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.06);
     }
 
-    .section-label,
-    .section-body {
-      padding: 34px;
+    .panel-inner {
+      padding: 30px;
     }
 
-    .section-label {
-      background: linear-gradient(160deg, rgba(23, 75, 82, 0.08), rgba(182, 90, 54, 0.08));
-      border-right: 1px solid var(--line);
+    .kicker {
+      color: var(--lime-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.74rem;
+      margin-bottom: 12px;
     }
 
-    .section-label h2 {
-      margin: 0 0 10px;
+    .panel h2 {
       font-family: Georgia, "Times New Roman", serif;
       font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 12px;
     }
 
-    .section-label p,
-    .section-body p,
-    .section-body li {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1rem;
+    .panel p,
+    .panel li {
+      color: var(--text-soft);
+      line-height: 1.82;
     }
 
-    .cards {
+    .panel-dark p,
+    .panel-dark li {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .feature-grid,
+    .card-grid,
+    .skill-grid,
+    .contact-grid {
       display: grid;
+      gap: 14px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card-grid,
+    .skill-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
     }
 
-    .card {
+    .feature,
+    .card,
+    .skill-box,
+    .contact-item,
+    .timeline-item {
+      border-radius: 20px;
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.72);
+      background: var(--white);
+      padding: 18px;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
+    .panel-dark .feature {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .feature h3,
+    .card h3,
+    .skill-box h3,
+    .timeline-item h3,
+    .contact-item strong {
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
     }
 
     .timeline {
       display: grid;
-      gap: 16px;
+      gap: 14px;
     }
 
     .timeline-item {
-      border-left: 3px solid var(--rust);
-      padding: 4px 0 4px 18px;
+      border-left: 4px solid var(--lime);
+      box-shadow: none;
     }
 
-    .timeline-item h3 {
-      margin: 0 0 4px;
-      font-size: 1.05rem;
-    }
-
-    .timeline-item p {
-      margin: 0;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .feature {
-      border-top: 3px solid var(--teal);
-      border-radius: 18px;
-      padding: 20px 18px;
-      background: rgba(23, 75, 82, 0.06);
-    }
-
-    .feature h3 {
-      margin: 0 0 8px;
-      font-size: 1.02rem;
-    }
-
-    .skill-columns {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .skill-box {
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .skill-box h3 {
-      margin: 0 0 10px;
-      font-size: 1.02rem;
-    }
-
-    .skill-box ul,
-    .travel-list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .quote-panel {
-      border-radius: 24px;
-      padding: 28px;
-      background: linear-gradient(135deg, rgba(23, 75, 82, 0.92), rgba(17, 54, 60, 0.96));
-      color: #f3ede4;
-    }
-
-    .quote-panel p {
-      color: rgba(243, 237, 228, 0.86);
-      margin: 0;
-    }
-
-    .quote-panel .lead {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.6rem;
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
-
-    .contact-strip {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-    }
-
-    .contact-item {
-      background: var(--cream);
-      padding: 22px;
-    }
-
-    .contact-item strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-
-    .contact-item a,
-    .contact-item span {
-      color: var(--muted);
-      text-decoration: none;
-      line-height: 1.6;
-      word-break: break-word;
+    .contact-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     footer {
-      padding: 26px 6px 4px;
+      padding: 8px 4px 0;
       text-align: center;
-      color: var(--muted);
+      color: var(--text-soft);
       font-size: 0.92rem;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1024px) {
       .hero,
-      .section-grid {
+      .band {
         grid-template-columns: 1fr;
       }
 
-      .section-label {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .hero-photo {
+      .hero-side {
         min-height: 420px;
       }
 
-      .contact-strip {
+      .feature-grid,
+      .contact-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
       .page {
-        width: min(100% - 20px, 1180px);
+        width: min(100% - 16px, 1220px);
       }
 
-      .hero-copy,
-      .section-label,
-      .section-body {
-        padding: 24px;
-      }
-
-      .hero-metrics,
-      .cards,
-      .feature-list,
-      .skill-columns,
-      .contact-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .badge-row {
-        gap: 8px;
-      }
-
-      .nav {
+      .topbar {
         flex-direction: column;
         align-items: flex-start;
+        border-radius: 26px;
       }
 
-      .photo-badge {
-        right: 18px;
-        left: 18px;
-        max-width: none;
+      .hero-main,
+      .panel-inner {
+        padding: 22px;
+      }
+
+      .metric-grid,
+      .feature-grid,
+      .card-grid,
+      .skill-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
+    <div class="topbar">
+      <div class="brand">Augustin Immanuel</div>
+      <div class="topnav">
+        <a href="#about">About</a>
+        <a href="#strengths">Strengths</a>
+        <a href="profile.html">Detailed Profile</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
     <section class="hero" id="top">
-      <div class="hero-copy">
-        <div>
-          <div class="nav">
-            <div class="brand">Augustin Immanuel</div>
-            <div class="nav-links">
-              <a href="#about">About</a>
-              <a href="#strengths">Strengths</a>
-              <a href="#contact">Contact</a>
-            </div>
+      <div class="hero-main">
+        <div class="eyebrow">Senior Project Manager</div>
+        <h1>Execution, service delivery, and agile leadership.</h1>
+        <p class="summary">
+          SAFe Certified Scaled Agile Scrum Master with 23+ years of experience in service
+          delivery, project planning, and implementation across diverse IT environments.
+          I combine ITIL-driven operational excellence with deep infrastructure knowledge
+          across AIX, Solaris, Linux, and Windows to deliver reliable outcomes, strengthen
+          stakeholder confidence, and improve cost-effective operations.
+        </p>
+
+        <div class="button-row">
+          <a class="button button-primary" href="Augustin-Immanuel-Resume.pdf">Download Resume</a>
+          <a class="button button-secondary" href="profile.html">Detailed Profile</a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/augustinimmanuelps/">LinkedIn</a>
+          <a class="button button-sky" href="https://wa.me/919884075735">WhatsApp</a>
+          <a class="button button-secondary" href="tel:+919884075735">Call Me</a>
+        </div>
+
+        <div class="badge-row" aria-label="Certification badges">
+          <span class="badge">SAFe Scrum Master</span>
+          <span class="badge">ITIL Foundation</span>
+          <span class="badge">Six Sigma Yellow Belt</span>
+          <span class="badge">CCNA</span>
+          <span class="badge">Microsoft Certified</span>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>23+ Years</strong>
+            <span>Experience across service delivery, infrastructure operations, project execution, and customer support leadership.</span>
           </div>
-
-          <div style="margin-top: 48px;">
-            <div class="eyebrow">Senior Project Manager</div>
-            <h1>Leading delivery with clarity, discipline, and trust.</h1>
-            <p class="summary">
-              SAFe Certified Scaled Agile Scrum Master with 23+ years of experience in service
-              delivery, project planning, and implementation across diverse IT environments.
-              I combine ITIL-driven operational excellence with deep infrastructure knowledge
-              across AIX, Solaris, Linux, and Windows to deliver reliable outcomes, strengthen
-              stakeholder confidence, and improve cost-effective operations.
-            </p>
-
-            <div class="cta-row">
-              <a class="button button-primary" href="Augustin-Immanuel-Resume.pdf">Download Resume</a>
-              <a class="button button-secondary" href="profile.html">Detailed Profile</a>
-              <a class="button button-secondary" href="https://www.linkedin.com/in/augustinimmanuelps/">View LinkedIn</a>
-              <a class="button button-teal" href="https://wa.me/919884075735">WhatsApp</a>
-              <a class="button button-secondary" href="tel:+919884075735">Call Me</a>
-              <a class="button button-secondary" href="mailto:augustinonline@gmail.com">Email Me</a>
-            </div>
-
-            <div class="badge-row" aria-label="Certification badges">
-              <span class="badge">SAFe Scrum Master</span>
-              <span class="badge">ITIL Foundation</span>
-              <span class="badge">Six Sigma Yellow Belt</span>
-              <span class="badge">CCNA</span>
-              <span class="badge">Microsoft Certified</span>
-            </div>
-
-            <div class="hero-metrics">
-              <div class="metric">
-                <strong>23+ Years</strong>
-                <span>Experience across service delivery, project execution, infrastructure support, and operations leadership.</span>
-              </div>
-              <div class="metric">
-                <strong>SAFe + ITIL</strong>
-                <span>Combining agile leadership with process discipline in change, release, incident, and risk management.</span>
-              </div>
-              <div class="metric">
-                <strong>Infrastructure Depth</strong>
-                <span>Strong hands-on background across AIX, Solaris, Linux, Windows, cloud, virtualization, and middleware.</span>
-              </div>
-            </div>
+          <div class="metric">
+            <strong>SAFe + ITIL</strong>
+            <span>Agile leadership combined with discipline in change, release, incident, and risk management.</span>
+          </div>
+          <div class="metric">
+            <strong>Infrastructure Depth</strong>
+            <span>Strong capability across AIX, Solaris, Linux, Windows, cloud platforms, virtualization, and middleware.</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-photo">
+      <div class="hero-side">
         <img src="profile.jpg" alt="Portrait of Augustin Immanuel">
-        <div class="photo-badge">
-          <strong>Available for leadership opportunities</strong>
-          <span>Open to senior project and program management roles focused on delivery excellence and transformation.</span>
+        <div class="side-card">
+          <strong>Current engagement</strong>
+          <span>Freelancing with a startup since September 2025, bringing delivery coordination and project leadership to a fast-moving environment.</span>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>Executive Profile</h2>
-          <p>
-            A performance-driven delivery leader blending agile execution, IT service management, and deep technical credibility.
-          </p>
-        </div>
-        <div class="section-body">
+    <section class="band" id="about">
+      <div class="panel panel-dark">
+        <div class="panel-inner">
+          <div class="kicker">Executive Profile</div>
+          <h2>Built for complex delivery environments.</h2>
           <p>
             I am a SAFe Certified Scaled Agile Scrum Master and ITIL v3 professional with
             more than 23 years of experience spanning service delivery, project planning,
-            implementation, release management, and operational support. My approach is rooted
-            in bringing together people, process, and technology to improve efficiency,
-            scalability, and service quality.
+            implementation, release management, and operational support.
           </p>
           <p>
-            I have a proven ability to collaborate with senior leadership and cross-functional
-            teams to define enterprise-wide support and delivery strategies, strengthen SLA
-            adherence, reduce operational friction, and create dependable customer experiences
-            in complex IT environments.
+            I work at the intersection of people, process, and technology to improve
+            scalability, service quality, and operational efficiency while keeping business
+            priorities and stakeholder confidence in focus.
           </p>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>What I Deliver</h2>
-          <p>
-            Delivery leadership built on agile methods, technical understanding, and operational excellence.
-          </p>
-        </div>
-        <div class="section-body">
-          <div class="feature-list">
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="kicker">What I Deliver</div>
+          <h2>Leadership with structure and momentum.</h2>
+          <div class="feature-grid">
             <div class="feature">
-              <h3>Agile leadership and SAFe expertise</h3>
-              <p>Applying Scaled Agile practices to improve collaboration, delivery rhythm, transparency, and continuous improvement.</p>
+              <h3>Agile leadership</h3>
+              <p>Applying SAFe practices to improve collaboration, visibility, and continuous improvement.</p>
             </div>
             <div class="feature">
-              <h3>Service delivery and project execution</h3>
-              <p>Managing planning, implementation, releases, and stakeholder alignment to keep delivery predictable and effective.</p>
+              <h3>Project execution</h3>
+              <p>Managing planning, implementation, releases, and stakeholder alignment across delivery cycles.</p>
             </div>
             <div class="feature">
-              <h3>Operational excellence and cost efficiency</h3>
-              <p>Using ITIL practices, workflow optimization, and practical governance to improve quality while controlling cost.</p>
+              <h3>Operational excellence</h3>
+              <p>Using ITIL methods and workflow discipline to improve quality, reliability, and cost efficiency.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="strengths">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>Core Strengths</h2>
-          <p>
-            Core strengths drawn directly from delivery leadership, infrastructure operations, and support transformation.
-          </p>
-        </div>
-        <div class="section-body">
-          <div class="cards">
-            <div class="card">
-              <h3>ITIL v3 Process Optimization</h3>
-              <p>
-                Proven experience in change management, release management, incident management, and risk mitigation.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Cross-Functional Collaboration</h3>
-              <p>
-                Strong partnership with senior management and department heads to implement enterprise-wide technical support strategies.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Technical Depth</h3>
-              <p>
-                Deep expertise in AIX, Solaris, Linux, Windows, middleware, cloud, virtualization, and infrastructure support environments.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Customer-Focused Delivery</h3>
-              <p>
-                Committed to high-quality customer experience, SLA adherence, and building lasting stakeholder confidence.
-              </p>
-            </div>
+    <section class="panel" id="strengths" style="margin-bottom: 18px;">
+      <div class="panel-inner">
+        <div class="kicker">Core Strengths</div>
+        <h2>Delivery, governance, and technical credibility.</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>ITIL v3 Process Optimization</h3>
+            <p>Proven experience in change management, release management, incident management, and risk mitigation.</p>
+          </div>
+          <div class="card">
+            <h3>Cross-Functional Collaboration</h3>
+            <p>Strong partnership with senior management and department heads to implement enterprise-wide support strategies.</p>
+          </div>
+          <div class="card">
+            <h3>Technical Depth</h3>
+            <p>Deep expertise in AIX, Solaris, Linux, Windows, middleware, cloud, virtualization, and infrastructure environments.</p>
+          </div>
+          <div class="card">
+            <h3>Customer-Focused Delivery</h3>
+            <p>Committed to SLA adherence, service quality, and long-term stakeholder confidence.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>Experience</h2>
-          <p>
-            Career progression across project management, service delivery, Unix operations, system administration, and technical support.
-          </p>
-        </div>
-        <div class="section-body">
+    <section class="band">
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="kicker">Experience</div>
+          <h2>Career Timeline</h2>
           <div class="timeline">
             <div class="timeline-item">
               <h3>Startup | Freelancer | September 2025 - Present</h3>
@@ -686,55 +581,41 @@
             </div>
             <div class="timeline-item">
               <h3>Tech Mahindra, Chennai | Project Manager | 2019 - August 2025</h3>
-              <p>Oversaw project management, release management, and delivery management for major clients in storage, data management, and telecom industries while ensuring timely execution, quality control, and stakeholder alignment.</p>
+              <p>Oversaw project management, release management, and delivery management for major clients in storage, data management, and telecom industries.</p>
             </div>
             <div class="timeline-item">
               <h3>Mindtree Limited, Chennai | Technical Lead | 2017 - 2019</h3>
-              <p>Led the Shared Services Unix team managing 65 engineers across 14 clients, guiding L1, L2, L3 engineers and SMEs, and driving service delivery, mentorship, tool enhancement, and issue resolution.</p>
+              <p>Led the Shared Services Unix team managing 65 engineers across 14 clients, with delivery, mentorship, and service reliability responsibilities.</p>
             </div>
             <div class="timeline-item">
               <h3>Sify Technologies Limited, Chennai | Deputy Manager - Systems | 2005 - 2017</h3>
-              <p>Led operations service delivery for Novartis Pharma Europe and US regions, implemented Saba LMS on AIX and Solaris, managed Moodle LMS deployments, and supervised application administration and operations teams.</p>
-            </div>
-            <div class="timeline-item">
-              <h3>Origin Infosys Private Limited, Chennai | Manager - Tech Support | 2002 - 2005</h3>
-              <p>Joined as Senior Network Administrator and was promoted to Manager - Tech Support, leading engineers in system services, troubleshooting, optimization, and Windows and Exchange infrastructure operations.</p>
-            </div>
-            <div class="timeline-item">
-              <h3>Previous Experience | 1995 - 2005</h3>
-              <p>Held various leadership roles in system administration, technical support, and network infrastructure across leading organizations.</p>
+              <p>Led operations service delivery for Novartis Pharma and managed LMS platforms on AIX, Solaris, and Moodle environments.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>Technical & Functional Skills</h2>
-          <p>
-            A blend of service management, infrastructure, cloud, middleware, and team leadership capabilities.
-          </p>
-        </div>
-        <div class="section-body">
-          <div class="skill-columns">
+      <div class="panel panel-dark">
+        <div class="panel-inner">
+          <div class="kicker">Skills & Certifications</div>
+          <h2>Practical strengths across platforms and teams.</h2>
+          <div class="skill-grid">
             <div class="skill-box">
-              <h3>Platforms and Tools</h3>
+              <h3>Technical & Functional Skills</h3>
               <ul>
-                <li>IT Service Management and Support: BMC Remedy on Demand and ServiceNow</li>
-                <li>Cloud and Virtualization: AWS, Azure, Kubernetes, VMware ESXi, Citrix Xen Server, Microsoft Virtual PC</li>
-                <li>Middleware and Server Administration: WebLogic administration, tuning, clustering, JBOSS clustering and load balancing</li>
-                <li>Operating Systems: AIX, Sun Solaris, Linux, SCO UNIX, and Windows Server</li>
+                <li>BMC Remedy on Demand and ServiceNow</li>
+                <li>AWS, Azure, Kubernetes, VMware ESXi, Citrix Xen Server</li>
+                <li>WebLogic administration, tuning, clustering, JBOSS load balancing</li>
+                <li>AIX, Sun Solaris, Linux, SCO UNIX, Windows Server</li>
               </ul>
             </div>
             <div class="skill-box">
-              <h3>Operational Capability</h3>
+              <h3>Certifications</h3>
               <ul>
-                <li>Network Configuration and Security with CCNA background</li>
-                <li>Patch management, bug fixes, and release upgrades</li>
-                <li>Leadership and mentoring for technical troubleshooting and operational excellence</li>
-                <li>People, Process, and Technology optimization for efficient service delivery</li>
+                <li>Scaled Agile Scrum Master (2022)</li>
+                <li>ITIL Foundation Certification</li>
+                <li>Six Sigma Yellow Belt</li>
+                <li>CCNA and Microsoft Certified Product Specialist</li>
               </ul>
             </div>
           </div>
@@ -742,115 +623,33 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>Certifications</h2>
-          <p>
-            Professional courses and certifications supporting agile leadership, service management, networking, systems, and security.
-          </p>
-        </div>
-        <div class="section-body">
-          <div class="skill-columns">
-            <div class="skill-box">
-              <h3>Professional Certifications</h3>
-              <ul>
-                <li>Scaled Agile Scrum Master (SAFe Scrum Master) - 2022</li>
-                <li>ITIL Foundation Certification - 2011</li>
-                <li>Six Sigma Certification - Yellow Belt</li>
-                <li>Cisco Certified Network Associate (CCNA)</li>
-                <li>Microsoft Certified Product Specialist</li>
-              </ul>
-            </div>
-            <div class="skill-box">
-              <h3>Technical Courses</h3>
-              <ul>
-                <li>Sun Solaris Administration</li>
-                <li>Windows NT Server 4.0 in the Enterprise and Windows NT Workstation 4.0</li>
-                <li>Checkpoint NG/AI Firewall</li>
-                <li>Higher Diploma in Software Engineering - Aptech Limited, Chennai</li>
-              </ul>
-            </div>
+    <section class="panel" id="contact">
+      <div class="panel-inner">
+        <div class="kicker">Contact</div>
+        <h2>Open to project leadership, consulting, and freelance opportunities.</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:augustinonline@gmail.com">augustinonline@gmail.com</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>Onsite Travel & Languages</h2>
-          <p>
-            International exposure and communication strengths that support client-facing and cross-cultural delivery.
-          </p>
-        </div>
-        <div class="section-body">
-          <div class="skill-columns">
-            <div class="skill-box">
-              <h3>Onsite Travel</h3>
-              <ul class="travel-list">
-                <li>Novartis Pharma - Switzerland</li>
-                <li>SriLanka Telecom - Sri Lanka</li>
-                <li>TRW - Germany</li>
-              </ul>
-            </div>
-            <div class="skill-box">
-              <h3>Languages</h3>
-              <ul class="travel-list">
-                <li>English - Fluent</li>
-                <li>Tamil - Fluent</li>
-              </ul>
-            </div>
+          <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:+919884075735">+91 9884075735</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-grid">
-        <div class="section-label">
-          <h2>Contact</h2>
-          <p>
-            Let’s connect for project leadership, program delivery, or transformation-focused opportunities.
-          </p>
-        </div>
-        <div class="section-body" style="padding: 0;">
-          <div class="contact-strip">
-            <div class="contact-item">
-              <strong>Email</strong>
-              <a href="mailto:augustinonline@gmail.com">augustinonline@gmail.com</a>
-            </div>
-            <div class="contact-item">
-              <strong>Phone</strong>
-              <a href="tel:+919884075735">+91 9884075735</a>
-            </div>
-            <div class="contact-item">
-              <strong>WhatsApp</strong>
-              <a href="https://wa.me/919884075735">Message on WhatsApp</a>
-            </div>
-            <div class="contact-item">
-              <strong>LinkedIn</strong>
-              <a href="https://www.linkedin.com/in/augustinimmanuelps/">linkedin.com/in/augustinimmanuelps</a>
-            </div>
-            <div class="contact-item">
-              <strong>Resume</strong>
-              <a href="Augustin-Immanuel-Resume.pdf">Download PDF</a>
-            </div>
-            <div class="contact-item">
-              <strong>Detailed Profile</strong>
-              <a href="profile.html">Open full profile</a>
-            </div>
-            <div class="contact-item">
-              <strong>Availability</strong>
-              <span>Open to conversations about senior project and program management roles.</span>
-            </div>
+          <div class="contact-item">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/919884075735">Message on WhatsApp</a>
+          </div>
+          <div class="contact-item">
+            <strong>Detailed Profile</strong>
+            <a href="profile.html">Open full profile</a>
           </div>
         </div>
       </div>
     </section>
 
     <footer>
-      Built for GitHub Pages. Updated with executive profile content, direct contact actions, portrait, LinkedIn, and resume download.
+      Refreshed with a new editorial theme for GitHub Pages.
     </footer>
   </div>
 </body>
